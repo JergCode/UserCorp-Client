@@ -1,0 +1,12 @@
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/img/logo2 white.png" class="d-inline-block align-center" width="30" height="30" alt="" loading="lazy">
+            <span class="ml-2">UserCorp</span>
+        </a>
+    </nav>
+</header>
+<main class="container p-5">
+    <mat-spinner *ngIf="!loading()" color="primary"></mat-spinner>
+    <app-user-form *ngIf="loading()" [user]="user" [create]="false"></app-user-form>
+</main>

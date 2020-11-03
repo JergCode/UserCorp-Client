@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-6">
+        <mat-card>
+            <mat-card-header class="justify-content-center">
+                <mat-card-title>
+                    {{ title }}
+                </mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content class="p-3">
+                <form [formGroup]="form" (ngSubmit)="submitUser($event)">
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="w-100">
+                                <mat-label>Name</mat-label>
+                                <input formControlName="name" matInput type="text">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="w-100">
+                                <mat-label>Last Name</mat-label>
+                                <input formControlName="lastName" matInput type="text">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="w-100">
+                                <mat-label>email</mat-label>
+                                <input formControlName="email" matInput type="email">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

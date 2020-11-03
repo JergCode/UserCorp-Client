@@ -1,0 +1,12 @@
+.title {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.jumbotron {
+    background-color: #1c325f;
+    color: #fff;
+    @media (min-width: 576px) {
+        padding: 2rem 1rem;
+    }
+}

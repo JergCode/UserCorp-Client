@@ -1,0 +1,42 @@
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/img/logo2 white.png" class="d-inline-block align-center" width="30" height="30" alt="" loading="lazy">
+            <span class="ml-2">UserCorp</span>
+        </a>
+    </nav>
+</header>
+<main class="container">
+    <div class="my-4">
+        <h1>User List</h1>
+    </div>
+    <table #table mat-table [dataSource]="users" class="mat-elevation-z8 w-100">
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef> Last Name </th>
+            <td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> email </th>
+            <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let user">
+                <button mat-icon-button (click)="delete(user)" color="warn" title="Delete User"><mat-icon>delete</mat-icon></button>
+                <button mat-icon-button (click)="edit(user)" color="primary" class="ml-2" title="Edit User"><mat-icon>edit</mat-icon></button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</main>
